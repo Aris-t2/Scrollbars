@@ -17,7 +17,7 @@ From this projects <code>/method 2/firefox/</code> folder copy <code>defaults</c
 <h2>Script/startup cache must be deleted after every change!</h2>
 Close Firefox, search for <code>startupCache</code> folder and delete its content</br>
 WINDOWS: <code>C:\Users\ NAME \AppData\Local\Mozilla\Firefox\Profiles\ PROFILE \startupCache</code></br>
-This is not the same profile folder where custom scripts and styles are stored!</br>
+This is not the same profile folder custom scripts and styles are stored!</br>
 More info about startup cache removal (in German): https://github.com/ardiman/userChrome.js/wiki/Skriptcache </br>
 More info about startup cache removal (in English [Google translate]): https://translate.googleusercontent.com/translate_c?act=url&depth=1&ie=UTF8&prev=_t&rurl=translate.google.com&sl=auto&sp=nmt4&tl=en&u=https://github.com/ardiman/userChrome.js/wiki/Skriptcache </br>
 <h2>Where to find Firefox profile folder?</h2>
