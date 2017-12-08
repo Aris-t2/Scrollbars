@@ -6,14 +6,14 @@
 M1 is based on this project by nuchi: https://github.com/nuchi/firefox-quantum-userchromejs </br>
 M1 will stop working when Mozilla drops XBL support.</br>
 </br>
-From this projects <code>/method 1/</code> folder copy <code>userChrome</code> folder and <code>userChrome.css</code> file to <code>\ PROFILENAME \chrome\ </code> or add code from <code>userChrome.css</code> file to an existing <code>userChrome.css</code> file.</br>
+From this projects <code>\method 1\</code> folder copy <code>userChrome</code> folder and <code>userChrome.css</code> file to <code>\ PROFILENAME \chrome\ </code> or add code from <code>userChrome.css</code> file to an existing <code>userChrome.css</code> file.</br>
 </br>
 <h2>Method 2 - files for Firefox folder and to Firefox profile folder</h2>
 M2 is based on this project by ardiman: https://github.com/ardiman/userChrome.js </br>
 </br>
-From this projects <code>/method 2/profile/</code> folder copy <code>userChrome</code> folder and <code>userChrome.js</code> file to <code>\ PROFILENAME \chrome\ </code>.</br>
+From this projects <code>\method 2\profile\</code> folder copy <code>userChrome</code> folder and <code>userChrome.js</code> file to <code>\ PROFILENAME \chrome\ </code>.</br>
 </br>
-From this projects <code>/method 2/firefox/</code> folder copy <code>defaults</code> folder and <code>config.js</code> file to Firefox main directory (where the Firefox executable is).
+From this projects <code>\method 2\firefox\</code> folder copy <code>defaults</code> folder and <code>config.js</code> file to Firefox main directory (where the Firefox executable is).
 </br>
 <h2>Script/startup cache must be deleted after every change!</h2>
 Close Firefox, search for <code>startupCache</code> folder and delete its content.</br>
