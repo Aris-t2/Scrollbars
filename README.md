@@ -34,8 +34,8 @@ or <code>Shift+F2</code> to open Firefox's command line, then enter the command 
 <code>\ PROFILENAME \chrome\userChrome.js</code> (method 2)</br>
 </br>
 <h2>Customize scrollbars</h2>
-- Open <code>custom_scrollbars.uc.js</code> with any text editor (<b><a href=https://notepad-plus-plus.org/download/>Notepad++</a></b> recommended on Windows).</br>
-- Follow instruction inside file on how to modify scrollbar attributes</br>
+Open <code>custom_scrollbars.uc.js</code> with any text editor (<b><a href=https://notepad-plus-plus.org/download/>Notepad++</a></b> recommended on Windows).</br>
+Follow instruction inside file on how to modify scrollbar attributes</br>
 <h2>What scrollbar tweaks does this project offer?</h2>
 - hide scrollbars</br>
 - hide scrollbar buttons</br>
