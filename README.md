@@ -1,8 +1,8 @@
-<h2>Custom Scrollbars for Firefox 57+</h2>
+<h1>Custom Scrollbars for Firefox 57+</h1>
 <h2>Want to support this project?</h2>
 <b><a href=https://www.paypal.me/tkpay>[ Paypal Me ]</a></b></br>
 </br>
-<h2>Method 1 - files for Firefox profile folder only</h2></br>
+<h2>Method 1 - files for Firefox profile folder only</h2>
 M1 is based on this project by nuchi: https://github.com/nuchi/firefox-quantum-userchromejs </br>
 M1 will stop working when Mozilla drops XBL support.</br>
 From this projects <code>/method 1/</code> folder copy <code>userChrome</code> folder and <code>userChrome.css</code> file to <code>\ PROFILENAME \chrome\ </code> or add code from <code>userChrome.css</code> file to a existing <code>userChrome.css</code> file.</br>
