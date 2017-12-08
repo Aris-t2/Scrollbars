@@ -10,8 +10,6 @@ From this projects <code>/method 1/</code> folder copy <code>userChrome</code> f
 </br>
 <h2>Method 2 - files for Firefox folder and to Firefox profile folder</h2>
 M2 is based on this project by ardiman: https://github.com/ardiman/userChrome.js </br>
-M2 is also based on scripts from Camp Firefox forum: https://www.camp-firefox.de/forum/viewtopic.php?f=16&t=100898
-M2 should still work after method 1 is gone</br>
 </br>
 From this projects <code>/method 2/profile/</code> folder copy <code>userChrome</code> folder and <code>userChrome.js</code> file to <code>\ PROFILENAME \chrome\ </code>.</br>
 </br>
