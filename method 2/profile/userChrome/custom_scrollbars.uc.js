@@ -7,7 +7,7 @@
 
 /* ******************************************************************************************** */
 /* Custom Scrollbars for Firefox ************************************************************** */
-/* version 1.0.0 ****************************************************************************** */
+/* version 1.0.1 ****************************************************************************** */
 /* ******************************************************************************************** */
 
 /* ***********************************************************************************************
@@ -46,6 +46,7 @@ var custom_scrollbar_width = true; /* default = false */
 var custom_scrollbar_width_value = 17; /* 10-? // default = 17 (in px) */
 var custom_scrollbar_opacity = false; /* default = false */
 var custom_opacity_value = "1.0"; /* default = 1.0 */
+var enable_floating_scrollbars = false; /* scrollbars on top of web content */
 
 // Custom scrollbar appearance settings - "cs"
 var enable_custom_scrollbars = true;
@@ -74,12 +75,11 @@ var cs_buttons_roundness = 0; /* default = 0 (in px) */
 // Scrollbar code
 
 Components.utils.import("resource://gre/modules/Services.jsm");
-
+var ss =  Components.classes["@mozilla.org/content/style-sheet-service;1"].getService(Components.interfaces.nsIStyleSheetService);
 var custom_scrollbars = {
 
   init: function() {
 
-  var ss =  Components.classes["@mozilla.org/content/style-sheet-service;1"].getService(Components.interfaces.nsIStyleSheetService);
   var uri = Services.io.newURI("data:text/css;charset=utf-8," + encodeURIComponent('\
 	\
 	@namespace html url("http://www.w3.org/1999/xhtml");\
@@ -124,7 +124,6 @@ var scrollbar_buttons = {
 
   init: function() {
 
-  var ss =  Components.classes["@mozilla.org/content/style-sheet-service;1"].getService(Components.interfaces.nsIStyleSheetService);
   var uri = Services.io.newURI("data:text/css;charset=utf-8," + encodeURIComponent('\
 	\
 	@namespace html url("http://www.w3.org/1999/xhtml");\
@@ -154,7 +153,6 @@ var scrollbar_width = {
 
   init: function() {
 
-  var ss =  Components.classes["@mozilla.org/content/style-sheet-service;1"].getService(Components.interfaces.nsIStyleSheetService);
   var uri = Services.io.newURI("data:text/css;charset=utf-8," + encodeURIComponent('\
 	\
 	@namespace html url("http://www.w3.org/1999/xhtml");\
@@ -177,11 +175,38 @@ var scrollbar_width = {
   }
 };
 
+var floating_scrollbars = {
+
+  init: function() {
+
+  var uri = Services.io.newURI("data:text/css;charset=utf-8," + encodeURIComponent('\
+	\
+	@namespace html url("http://www.w3.org/1999/xhtml");\
+	\
+	scrollbar {\
+	  position: relative !important;\
+	  z-index: 1000000000 !important;\
+	}\
+	scrollbar[orient="vertical"] {\
+	  -moz-margin-start: -'+custom_scrollbar_width_value+'px !important;\
+	  width: '+custom_scrollbar_width_value+'px !important;\
+	}\
+	scrollbar[orient="horizontal"] {\
+	  margin-top: -'+custom_scrollbar_width_value+'px !important;\
+	  height: '+custom_scrollbar_width_value+'px !important;\
+	}\
+	\
+  '), null, null);
+
+  ss.loadAndRegisterSheet(uri, ss.AGENT_SHEET);
+
+  }
+};
+
 var scrollbar_opacity = {
 
   init: function() {
 
-  var ss =  Components.classes["@mozilla.org/content/style-sheet-service;1"].getService(Components.interfaces.nsIStyleSheetService);
   var uri = Services.io.newURI("data:text/css;charset=utf-8," + encodeURIComponent('\
 	\
 	@namespace html url("http://www.w3.org/1999/xhtml");\
@@ -201,7 +226,6 @@ var remove_scrollbars = {
 
   init: function() {
 
-  var ss =  Components.classes["@mozilla.org/content/style-sheet-service;1"].getService(Components.interfaces.nsIStyleSheetService);
   var uri = Services.io.newURI("data:text/css;charset=utf-8," + encodeURIComponent('\
 	\
 	@namespace html url("http://www.w3.org/1999/xhtml");\
@@ -222,5 +246,6 @@ var remove_scrollbars = {
 if(enable_custom_scrollbars==true) custom_scrollbars.init();
 if(hide_scrollbar_buttons==true) scrollbar_buttons.init();
 if(custom_scrollbar_width==true) scrollbar_width.init();
+if(enable_floating_scrollbars==true) floating_scrollbars.init();
 if(custom_scrollbar_opacity==true) scrollbar_opacity.init();
 if(hide_scrollbars==true) remove_scrollbars.init();
