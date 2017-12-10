@@ -38,20 +38,20 @@ or <code>Shift+F2</code> to open Firefox's command line, then enter the command 
 <code>\ PROFILENAME \chrome\userChrome.js</code> (method 2)</br>
 </br>
 <h2>Customize scrollbars</h2>
-Open <code>custom_scrollbars.uc.js</code> with any text editor (<b><a href=https://notepad-plus-plus.org/download/>Notepad++</a></b> recommended on Windows).</br>
-Follow instruction inside file on how to modify scrollbar attributes</br>
-<h2>What scrollbar tweaks does this project offer?</h2>
+Open <code>\chrome\userChrome\custom_scrollbars.uc.js</code> with any text editor (<b><a href=https://notepad-plus-plus.org/download/>Notepad++</a></b> recommended on Windows).</br>
+Follow instruction inside <code>custom_scrollbars.uc.js</code> on how to modify scrollbar attributes and appearance.</br>
+<h2>What features does this project offer?</h2>
 - hide scrollbars</br>
 - hide scrollbar buttons</br>
-- change width</br>
-- change opacity</br>
-- change background color / background image</br>
-- change thumb color / background image</br>
-- change hovered thumb color / background image</br>
-- change thumb roundness</br>
-- change thumb border</br>
-- change thumb border color</br>
-- change button color / background image</br>
-- change hovered button color / background image</br>
-- change button roundness</br>
+- custom scrollbar width</br>
+- custom scrollbar opacity</br>
+- custom scrollbar background color / background image for color gradient</br>
+- custom scrollbar thumb color / background image</br>
+- custom scrollbar hovered-thumb color / background image for color gradient</br>
+- custom scrollbar thumb roundness / border-radius</br>
+- custom scrollbar thumb border width</br>
+- custom scrollbar thumb border color</br>
+- custom scrollbar button color / background image for color gradient</br>
+- custom scrollbar hovered-button color / background image for color gradient</br>
+- custom scrollbar button roundness / border-radius</br>
 </br>
