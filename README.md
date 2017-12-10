@@ -23,7 +23,7 @@ WINDOWS: <code>C:\Users\ NAME \AppData\Local\Mozilla\Firefox\Profiles\ PROFILE \
 This is not the same profile folder custom scripts and styles are stored!</br>
 </br>
 More info about startup cache removal (in German): https://github.com/ardiman/userChrome.js/wiki/Skriptcache </br>
-More info about startup cache removal (in English [Google translate]): https://translate.googleusercontent.com/translate_c?act=url&depth=1&ie=UTF8&prev=_t&rurl=translate.google.com&sl=auto&sp=nmt4&tl=en&u=https://github.com/ardiman/userChrome.js/wiki/Skriptcache </br>
+More info about startup cache removal (in English [Google translation]): https://translate.googleusercontent.com/translate_c?act=url&depth=1&ie=UTF8&prev=_t&rurl=translate.google.com&sl=auto&sp=nmt4&tl=en&u=https://github.com/ardiman/userChrome.js/wiki/Skriptcache </br>
 <h2>Where to find Firefox profile folder?</h2>
 <b>1.</b> Find your profile folder.</br>
 <code>about:support > Profile Folder > Open Folder</code></br>
@@ -32,7 +32,7 @@ or <code>Shift+F2</code> to open Firefox's command line, then enter the command 
 <b>2.</b> User styles belong into <code>\chrome\</code> folder. Create it, if there is none yet.</br>
 <code>\ PROFILENAME \chrome\ </code></br>
 </br>
-<b>3.</b> Copy files and the folders into <code>\chrome\</code> sub-folder so the results look like this.</br>
+<b>3.</b> Copy files and the folders into <code>\chrome\</code> sub-folder so the results look like this:</br>
 <code>\ PROFILENAME \chrome\userChrome\</code> (method 1 and 2)</br>
 <code>\ PROFILENAME \chrome\userChrome.css</code> (method 1)</br>
 <code>\ PROFILENAME \chrome\userChrome.js</code> (method 2)</br>
