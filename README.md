@@ -44,6 +44,7 @@ Follow instruction inside <code>custom_scrollbars.uc.js</code> on how to modify 
 <h2>What features does this project offer?</h2>
 - hide scrollbars</br>
 - hide scrollbar buttons</br>
+- floating scrollbars (on top of web content)</br>
 - custom scrollbar width</br>
 - custom scrollbar opacity</br>
 - custom scrollbar background color / background image for color gradient</br>
