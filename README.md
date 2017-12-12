@@ -20,7 +20,7 @@ From this projects <code>\method 2\firefox\</code> folder copy <code>defaults</c
 Close Firefox, search for <code>startupCache</code> folder and delete its content.</br>
 </br>
 WINDOWS: <code>C:\Users\ NAME \AppData\Local\Mozilla\Firefox\Profiles\ PROFILE \startupCache</code></br>
-LINUX: <code>home\.cache\mozilla\firefox\ PROFILE \startupCache</code></br>
+LINUX: <code>\home\ NAME \.cache\mozilla\firefox\ PROFILE \startupCache</code></br>
 </br>
 This is not the same profile folder custom scripts and styles are stored!</br>
 </br>
