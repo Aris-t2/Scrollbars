@@ -17,15 +17,17 @@ From this projects <code>\method 2\profile\</code> folder copy <code>userChrome<
 From this projects <code>\method 2\firefox\</code> folder copy <code>defaults</code> folder and <code>config.js</code> file to Firefox main directory (where the Firefox executable is).
 </br>
 <h2>Script/startup cache must be deleted after every change!</h2>
-Open <code>about:profiles > Local Directory > Open Folder</code>, close Firefox and delete all files in <code>startupCache</code> folder.</br>
-WINDOWS: <code>C:\Users\ NAME \AppData\Local\Mozilla\Firefox\Profiles\ PROFILE \startupCache</code></br>
-LINUX: <code>\home\ NAME \.cache\mozilla\firefox\ PROFILE \startupCache</code></br>
+Where to fine <code>startupCache</code> folder?</br>
+<code>about:profiles > Local Directory > Open Folder</code>, close Firefox and delete all files in <code>startupCache</code> folder.</br>
+</br>
+Location on WINDOWS: <code>C:\Users\ NAME \AppData\Local\Mozilla\Firefox\Profiles\ PROFILE \startupCache</code></br>
+Location on LINUX location: <code>\home\ NAME \.cache\mozilla\firefox\ PROFILE \startupCache</code></br>
 </br>
 This is not the same profile folder custom scripts and styles are stored!</br>
 </br>
 More info about startup cache removal (in German): https://github.com/ardiman/userChrome.js/wiki/Skriptcache </br>
 More info about startup cache removal (in English [Google translation]): https://translate.googleusercontent.com/translate_c?act=url&depth=1&ie=UTF8&prev=_t&rurl=translate.google.com&sl=auto&sp=nmt4&tl=en&u=https://github.com/ardiman/userChrome.js/wiki/Skriptcache </br>
-<h2>Where to find Firefox profile folder?</h2>
+<h2>Where to find Firefox profile folder for styles and scripts?</h2>
 <b>1.</b> Find your profile folder.</br>
 <code>about:profiles > Root Directory > Open Folder</code></br>
 <code>about:support > Profile Folder > Open Folder</code></br>
