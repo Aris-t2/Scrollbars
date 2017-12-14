@@ -30,7 +30,7 @@ More info about startup cache removal (in English [Google translation]): https:/
 <h2>Where to find Firefox profile folder for styles and scripts?</h2>
 <b>1.</b> Find your profile folder.</br>
 <code>about:profiles > Root Directory > Open Folder</code></br>
-<code>about:support > Profile Folder > Open Folder</code></br>
+or <code>about:support > Profile Folder > Open Folder</code></br>
 or <code>Shift+F2</code> to open Firefox's command line, then enter the command <code>folder openprofile</code></br>
 </br>
 <b>2.</b> User styles belong into <code>\chrome\</code> folder. Create it, if there is none yet.</br>
