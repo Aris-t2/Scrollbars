@@ -9,7 +9,7 @@ M1 will stop working when Mozilla drops XBL support.</br>
 </br>
 From this projects <code>\method 1\</code> folder copy <code>userChrome</code> folder and <code>userChrome.css</code> file to <code>\ PROFILENAME \chrome\ </code> or add code from <code>userChrome.css</code> file to an existing <code>userChrome.css</code> file.</br>
 </br>
-<h2>Method 2 - files for Firefox folder and to Firefox profile folder</h2>
+<h2>Method 2 - files for Firefox installation folder and Firefox profile folder</h2>
 M2 is based on this project by ardiman: https://github.com/ardiman/userChrome.js </br>
 </br>
 From this projects <code>\method 2\profile\</code> folder copy <code>userChrome</code> folder and <code>userChrome.js</code> file to <code>\ PROFILENAME \chrome\ </code>.</br>
