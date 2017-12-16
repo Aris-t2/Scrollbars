@@ -36,7 +36,7 @@ or <code>Shift+F2</code> to open Firefox's command line, then enter the command 
 <b>2.</b> User styles belong into <code>\chrome\</code> folder. Create it, if there is none yet.</br>
 <code>\ PROFILENAME \chrome\ </code></br>
 </br>
-<b>3.</b> Copy files and the folders into <code>\chrome\</code> sub-folder so the results look like this:</br>
+<b>3.</b> Copy files and folders into <code>\chrome\</code> sub-folder so the results look like this:</br>
 <code>\ PROFILENAME \chrome\userChrome\</code> (method 1 and 2)</br>
 <code>\ PROFILENAME \chrome\userChrome.css</code> (method 1)</br>
 <code>\ PROFILENAME \chrome\userChrome.js</code> (method 2)</br>
