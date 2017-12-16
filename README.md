@@ -17,7 +17,7 @@ From this projects <code>\method 2\profile\</code> folder copy <code>userChrome<
 From this projects <code>\method 2\firefox\</code> folder copy <code>defaults</code> folder and <code>config.js</code> file to Firefox main directory (where the Firefox executable is).
 </br>
 <h2>Script/startup cache must be deleted after every change!</h2>
-Where to fine <code>startupCache</code> folder?</br>
+Where to find <code>startupCache</code> folder?</br>
 <code>about:profiles > Local Directory > Open Folder</code>, close Firefox and delete all files in <code>startupCache</code> folder.</br>
 </br>
 Location on WINDOWS: <code>C:\Users\ NAME \AppData\Local\Mozilla\Firefox\Profiles\ PROFILE \startupCache</code></br>
