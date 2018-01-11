@@ -48,9 +48,10 @@ Follow instruction inside <code>custom_scrollbars.uc.js</code> on how to modify 
 - hide scrollbars</br>
 - hide scrollbar buttons</br>
 - floating scrollbars (on top of web content)</br>
-- custom scrollbar width</br>
+- custom scrollbar size</br>
 - custom scrollbar opacity</br>
 - custom scrollbar background color / background image for color gradient</br>
+- custom scrollbar corner background color / background image for color gradient</br>
 - custom scrollbar thumb color / background image</br>
 - custom scrollbar hovered-thumb color / background image for color gradient</br>
 - custom scrollbar thumb roundness / border-radius</br>
@@ -58,5 +59,5 @@ Follow instruction inside <code>custom_scrollbars.uc.js</code> on how to modify 
 - custom scrollbar thumb border color</br>
 - custom scrollbar button color / background image for color gradient</br>
 - custom scrollbar hovered-button color / background image for color gradient</br>
-- custom scrollbar button roundness / border-radius</br>
+- custom scrollbar button roundness / border-radius / arrow</br>
 </br>

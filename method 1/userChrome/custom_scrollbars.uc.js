@@ -7,21 +7,21 @@
 
 /* ******************************************************************************************** */
 /* Custom Scrollbars for Firefox ************************************************************** */
-/* version 1.0.2 ****************************************************************************** */
+/* version 1.0.3 ****************************************************************************** */
 /* ******************************************************************************************** */
 
 /* ***********************************************************************************************
 
  README
  
- This file belongs into Firefox profile folder!
- Finding profile folder: address bar > about:support > Profile Folder > Open Folder
- File belongs into \ PROFILE \chrome\ directory.
+ [!] 'custom_scrollbars.uc.js' belongs into Firefox profiles 'chrome' folder!
+ -> finding profile folder: address bar > about:profiles > Root Directory > Open Folder
+ -> add file to \chrome\ folder (create one, if needed)
 
- STARTUP CACHE HAS TO BE DELETED AFTER EVERY CHANGE!
-
- Close Firefox, search for "startupCache" folder and delete its content
- WINDOWS: C:\Users\ NAME \AppData\Local\Mozilla\Firefox\Profiles\ PROFILE \startupCache
+ [!] STARTUP CACHE HAS TO BE DELETED AFTER EVERY CHANGE!
+ -> finding 'startupCache' folder: address bar > about:profiles > Local Directory > Open Folder > startupCache
+ -> close Firefox
+ -> delete 'startupCache' folders content
 
  ENABLING options > set var to true
  DISABLING options > set var to false
@@ -39,31 +39,49 @@
  
 *********************************************************************************************** */
 
-// General scrollbar settings
+// GENERAL SCROLLBAR SETTINGS
 var hide_scrollbars = false; /* default = false */
 var hide_scrollbar_buttons = false; /* default = false */
-var custom_scrollbar_width = true; /* default = false */
-var custom_scrollbar_width_value = 17; /* 10-? // default = 17 (in px) */
+var custom_scrollbar_size = true; /* default = false */
+var custom_scrollbar_size_value = 17; /* default = 17 // in px // 10-? */
 var custom_scrollbar_opacity = false; /* default = false */
-var custom_opacity_value = "1.0"; /* default = 1.0 */
-var enable_floating_scrollbars = false; /* default = false // scrollbars on top of web content */
+var custom_opacity_value = "1.0"; /* default = "1.0" */
+var enable_floating_scrollbars = false; /* default = false // scrollbars on top of web content // uses "custom_scrollbar_size_value" inside its code anyway */
 
-// Custom scrollbar appearance settings - "cs"
+// CUSTOM SCROLLBAR SETTINGS ("custom_scrollbar_" --> "cs_")
 var enable_custom_scrollbars = true;
-var cs_background_color = "#CCCCCC"; /* default = #CCCCCC */
-var cs_background_image = "linear-gradient(to right,transparent,rgba(255,255,255,0.5),transparent)"; /* default = none */
-var cs_thumb_color = "#33CCFF"; /* default = #33CCFF */
-var cs_thumb_image = "linear-gradient(to right,transparent,rgba(255,255,255,0.5),transparent)"; /* default = unset */
-var cs_thumb_hover_color = "#66FFFF"; /* default = #66FFFF */
-var cs_thumb_hover_image = "linear-gradient(to right,transparent,rgba(255,255,255,0.5),transparent)"; /* default = unset */
-var cs_thumb_roundness = 0; /* default = 0 (in px) */
-var cs_thumb_border = 1; /* default = 0 (in px) */
-var cs_thumb_border_color = "#33CCFF"; /* default ##33CCFF */
-var cs_buttons_color = "#000000"; /* default = #000000 */
-var cs_buttons_image = "linear-gradient(to right,transparent,rgba(255,255,255,0.5),transparent)"; /* default = unset */
-var cs_buttons_hover_color = "#000066"; /* default = #000066 */
-var cs_buttons_hover_image = "linear-gradient(to right,transparent,rgba(255,255,255,0.5),transparent)"; /* default = unset */
-var cs_buttons_roundness = 0; /* default = 0 (in px) */
+var cs_thumb_border = 1; /* default = 0 // in px */
+var cs_thumb_roundness = 0; /* default = 0 // in px */
+var cs_buttons_roundness = 0; /* default = 0 // in px */
+var cs_buttons_as_arrows = false; /* default = false // uses "custom_scrollbar_size_value" inside its code anyway */
+var cs_arrows_on_buttons = false; /* default = false // uses "custom_scrollbar_size_value" inside its code anyway */
+
+// CUSTOM SCROLLBAR COLORS/GRADIENTS
+// - background
+var cs_background_color = "#CCCCCC"; /* default = "#CCCCCC" */
+var cs_background_image_vertical = "linear-gradient(to right,transparent,rgba(255,255,255,0.5),transparent)"; /* default = "unset" */
+var cs_background_image_horizontal = "linear-gradient(to bottom,transparent,rgba(255,255,255,0.5),transparent)"; /* default = "unset" */
+// - corner
+var cs_corner_background_color = "#CCCCCC"; /* default = "#CCCCCC" */
+var cs_corner_background_image = "linear-gradient(45deg,transparent 30%,rgba(255,255,240,0.5) 50%,transparent 70%),linear-gradient(-45deg,transparent 30%,rgba(255,255,240,0.5) 50%,transparent 70%)"; /* default = "unset" */
+// - thumb/slider
+var cs_thumb_color = "#33CCFF"; /* default = "#33CCFF" */
+var cs_thumb_image_vertical = "linear-gradient(to right,transparent,rgba(255,255,255,0.5),transparent)"; /* default = "unset" */
+var cs_thumb_image_horizontal = "linear-gradient(to bottom,transparent,rgba(255,255,255,0.5),transparent)"; /* default = "unset" */
+var cs_thumb_hover_color = "#66FFFF"; /* default = "#66FFFF" */
+var cs_thumb_hover_image_vertical = "linear-gradient(to right,transparent,rgba(255,255,255,0.5),transparent)"; /* default = "unset" */
+var cs_thumb_hover_image_horizontal = "linear-gradient(to bottom,transparent,rgba(255,255,255,0.5),transparent)"; /* default = "unset" */
+var cs_thumb_border_color = "#33CCFF"; /* default "#33CCFF" */
+// - buttons
+var cs_buttons_color = "#000000"; /* default = "#000000" */
+var cs_buttons_image_vertical = "linear-gradient(to right,transparent,rgba(255,255,255,0.5),transparent)"; /* default = "unset" */
+var cs_buttons_image_horizontal = "linear-gradient(to bottom,transparent,rgba(255,255,255,0.5),transparent)"; /* default = "unset" */
+var cs_buttons_hover_color = "#000066"; /* default = "#000066" */
+var cs_buttons_hover_image_vertical = "linear-gradient(to right,transparent,rgba(255,255,255,0.5),transparent)"; /* default = "unset" */
+var cs_buttons_hover_image_horizontal = "linear-gradient(to bottom,transparent,rgba(255,255,255,0.5),transparent)"; /* default = "unset" */
+// - button arrows
+var cs_arrows_on_buttons_color = "#FF0000"; /* default = "#FF0000" */
+var cs_arrows_on_buttons_hover_color = "#FFBB00"; /* default = "#FFBB00" */
 
 
 /* ******************************************************************************************** */
@@ -78,39 +96,210 @@ var ss =  Components.classes["@mozilla.org/content/style-sheet-service;1"].getSe
 
 var custom_scrollbars = {
 
+	init: function() {
+
+	var uri = Services.io.newURI("data:text/css;charset=utf-8," + encodeURIComponent('\
+	\
+	@namespace html url("http://www.w3.org/1999/xhtml");\
+	\
+	scrollbar, scrollcorner, scrollbar thumb, scrollbar scrollbarbutton {\
+	  -moz-appearance: none !important;\
+	}\
+	scrollbar {\
+	  background-color: '+cs_background_color+' !important;\
+	}\
+	scrollbar[orient="vertical"] {\
+	  background-image: '+cs_background_image_vertical+' !important;\
+	}\
+	scrollbar[orient="horizontal"] {\
+	  background-image: '+cs_background_image_horizontal+' !important;\
+	}\
+	scrollcorner {\
+	  background-color: '+cs_corner_background_color+' !important;\
+	  background-image: '+cs_corner_background_image+' !important;\
+	}\
+	scrollbar thumb {\
+	  background-color: '+cs_thumb_color+' !important;\
+	  border-radius: '+cs_thumb_roundness+'px !important;\
+	  border: '+cs_thumb_border+'px solid '+cs_thumb_border_color+' !important;\
+	}\
+	scrollbar thumb[orient="vertical"] {\
+	  background-image: '+cs_thumb_image_vertical+' !important;\
+	}\
+	scrollbar thumb[orient="horizontal"] {\
+	  background-image: '+cs_thumb_image_horizontal+' !important;\
+	}\
+	scrollbar thumb:hover, scrollbar thumb:active {\
+	  background-color: '+cs_thumb_hover_color+' !important;\
+	}\
+	scrollbar thumb[orient="vertical"]:hover, scrollbar thumb[orient="vertical"]:active {\
+	  background-image: '+cs_thumb_hover_image_vertical+' !important;\
+	}\
+	scrollbar thumb[orient="horizontal"]:hover, scrollbar thumb[orient="horizontal"]:active {\
+	  background-image: '+cs_thumb_hover_image_horizontal+' !important;\
+	}\
+	scrollbar scrollbarbutton {\
+	  background-color: '+cs_buttons_color+' !important;\
+	  border-radius: '+cs_buttons_roundness+'px !important;\
+	}\
+	scrollbar[orient="vertical"] scrollbarbutton {\
+	  background-image: '+cs_buttons_image_vertical+' !important;\
+	}\
+	scrollbar[orient="horizontal"] scrollbarbutton {\
+	  background-image: '+cs_buttons_image_horizontal+' !important;\
+	}\
+	scrollbar scrollbarbutton:hover {\
+	  background-color: '+cs_buttons_hover_color+' !important;\
+	}\
+	scrollbar[orient="vertical"] scrollbarbutton:hover {\
+	  background-image: '+cs_buttons_hover_image_vertical+' !important;\
+	}\
+	scrollbar[orient="horizontal"] scrollbarbutton:hover {\
+	  background-image: '+cs_buttons_hover_image_horizontal+' !important;\
+	}\
+	'), null, null);
+
+	ss.loadAndRegisterSheet(uri, ss.AGENT_SHEET);
+
+	}
+};
+
+var cs_scrollbars_scrollbar_button_arrows = {
+
   init: function() {
 
   var uri = Services.io.newURI("data:text/css;charset=utf-8," + encodeURIComponent('\
 	\
 	@namespace html url("http://www.w3.org/1999/xhtml");\
 	\
-	scrollbar, scrollcorner {\
-	  -moz-appearance: none !important;\
-	  background-color: '+cs_background_color+' !important; \
-	  background-image: '+cs_background_image+' !important; \
+	scrollbar scrollbarbutton, \
+	scrollbar[orient="vertical"] scrollbarbutton,\
+	scrollbar[orient="horizontal"] scrollbarbutton, \
+	scrollbar[orient="vertical"] scrollbarbutton:hover,\
+	scrollbar[orient="horizontal"] scrollbarbutton:hover {\
+	  background-color: unset !important;\
+	  background-image: unset !important;\
+	  border-radius: 0px !important;\
 	}\
-	scrollbar thumb {\
-	  -moz-appearance: none !important;\
-	  background-color: '+cs_thumb_color+' !important;\
-	  background-image: '+cs_thumb_image+' !important;\
-	  border-radius: '+cs_thumb_roundness+'px !important;\
-	  border: '+cs_thumb_border+'px solid '+cs_thumb_border_color+' !important; \
+	scrollbar[orient="vertical"] > scrollbarbutton {\
+	  min-height: '+(custom_scrollbar_size_value/2)+'px !important;\
+	  height: '+(custom_scrollbar_size_value/2)+'px !important;\
+	  max-height: '+(custom_scrollbar_size_value/2)+'px !important;\
+	  min-width: '+custom_scrollbar_size_value+'px !important;\
+	  width: '+custom_scrollbar_size_value+'px !important;\
+	  max-width: '+custom_scrollbar_size_value+'px !important;\
 	}\
-	scrollbar thumb:hover, scrollbar thumb:active {\
-	  -moz-appearance: none !important;\
-	  background-color: '+cs_thumb_hover_color+' !important;\
-	  background-image: '+cs_thumb_hover_image+' !important;\
+	scrollbar[orient="horizontal"] > scrollbarbutton {\
+	  min-width: '+(custom_scrollbar_size_value/2)+'px !important;\
+	  width: '+(custom_scrollbar_size_value/2)+'px !important;\
+	  max-width: '+(custom_scrollbar_size_value/2)+'px !important;\
+	  min-height: '+custom_scrollbar_size_value+'px !important;\
+	  height: '+custom_scrollbar_size_value+'px !important;\
+	  max-height: '+custom_scrollbar_size_value+'px !important;\
 	}\
-	scrollbar scrollbarbutton {\
-	  -moz-appearance: none !important;\
-	  background-color: '+cs_buttons_color+' !important;\
-	  background-image: '+cs_buttons_image+' !important;\
-	  border-radius: '+cs_buttons_roundness+'px !important;\
+	scrollbar[orient="vertical"] > scrollbarbutton[type="decrement"] {\
+	  border-left: '+(custom_scrollbar_size_value/2)+'px solid transparent !important;\
+	  border-right: '+(custom_scrollbar_size_value/2)+'px solid transparent !important;\
+	  border-bottom: '+(custom_scrollbar_size_value/2)+'px solid '+cs_buttons_color+' !important;\
 	}\
-	scrollbar scrollbarbutton:hover {\
-	  -moz-appearance: none !important;\
-	  background-color: '+cs_buttons_hover_color+' !important;\
-	  background-image: '+cs_buttons_hover_image+' !important;\
+	scrollbar[orient="vertical"] > scrollbarbutton[type="decrement"]:hover {\
+	  border-bottom: '+(custom_scrollbar_size_value/2)+'px solid '+cs_buttons_hover_color+' !important;\
+	}\
+	scrollbar[orient="vertical"] > scrollbarbutton[type="increment"] {\
+	  border-left: '+(custom_scrollbar_size_value/2)+'px solid transparent !important;\
+	  border-right: '+(custom_scrollbar_size_value/2)+'px solid transparent !important;\
+	  border-top: '+(custom_scrollbar_size_value/2)+'px solid '+cs_buttons_color+' !important;\
+	}\
+	scrollbar[orient="vertical"] > scrollbarbutton[type="increment"]:hover {\
+	  border-top: '+(custom_scrollbar_size_value/2)+'px solid '+cs_buttons_hover_color+' !important;\
+	}\
+	scrollbar[orient="horizontal"] > scrollbarbutton[type="decrement"] {\
+	  border-top: '+(custom_scrollbar_size_value/2)+'px solid transparent !important;\
+	  border-bottom: '+(custom_scrollbar_size_value/2)+'px solid transparent !important;\
+	  border-right: '+(custom_scrollbar_size_value/2)+'px solid '+cs_buttons_color+' !important;\
+	}\
+	scrollbar[orient="horizontal"] > scrollbarbutton[type="decrement"]:hover {\
+	  border-right: '+(custom_scrollbar_size_value/2)+'px solid '+cs_buttons_hover_color+' !important;\
+	}\
+	scrollbar[orient="horizontal"] > scrollbarbutton[type="increment"] {\
+	  border-top: '+(custom_scrollbar_size_value/2)+'px solid transparent !important;\
+	  border-bottom: '+(custom_scrollbar_size_value/2)+'px solid transparent !important;\
+	  border-left: '+(custom_scrollbar_size_value/2)+'px solid '+cs_buttons_color+' !important;\
+	}\
+	scrollbar[orient="horizontal"] > scrollbarbutton[type="increment"]:hover {\
+	  border-left: '+(custom_scrollbar_size_value/2)+'px solid '+cs_buttons_hover_color+' !important;\
+	}\
+	\
+  '), null, null);
+
+  ss.loadAndRegisterSheet(uri, ss.AGENT_SHEET);
+
+  }
+};
+
+var cs_scrollbars_arrows_on_buttons = {
+
+  init: function() {
+
+  var uri = Services.io.newURI("data:text/css;charset=utf-8," + encodeURIComponent('\
+	\
+	@namespace html url("http://www.w3.org/1999/xhtml");\
+	\
+	scrollbar scrollbarbutton, \
+	scrollbar[orient="vertical"] scrollbarbutton,\
+	scrollbar[orient="horizontal"] scrollbarbutton, \
+	scrollbar[orient="vertical"] scrollbarbutton:hover,\
+	scrollbar[orient="horizontal"] scrollbarbutton:hover {\
+	  border-radius: 0px !important;\
+	}\
+	\
+	scrollbar[orient="vertical"] > scrollbarbutton {\
+	  min-height: '+(custom_scrollbar_size_value/2)+'px !important;\
+	  height: '+(custom_scrollbar_size_value/2)+'px !important;\
+	  max-height: '+(custom_scrollbar_size_value/2)+'px !important;\
+	  min-width: '+custom_scrollbar_size_value+'px !important;\
+	  width: '+custom_scrollbar_size_value+'px !important;\
+	  max-width: '+custom_scrollbar_size_value+'px !important;\
+	}\
+	scrollbar[orient="horizontal"] > scrollbarbutton {\
+	  min-width: '+(custom_scrollbar_size_value/2)+'px !important;\
+	  width: '+(custom_scrollbar_size_value/2)+'px !important;\
+	  max-width: '+(custom_scrollbar_size_value/2)+'px !important;\
+	  min-height: '+custom_scrollbar_size_value+'px !important;\
+	  height: '+custom_scrollbar_size_value+'px !important;\
+	  max-height: '+custom_scrollbar_size_value+'px !important;\
+	}\
+	scrollbar[orient="vertical"] > scrollbarbutton[type="decrement"] {\
+	  border-left: '+(custom_scrollbar_size_value/2)+'px solid transparent !important;\
+	  border-right: '+(custom_scrollbar_size_value/2)+'px solid transparent !important;\
+	  border-bottom: '+(custom_scrollbar_size_value/2)+'px solid '+cs_arrows_on_buttons_color+' !important;\
+	}\
+	scrollbar[orient="vertical"] > scrollbarbutton[type="decrement"]:hover {\
+	  border-bottom: '+(custom_scrollbar_size_value/2)+'px solid '+cs_arrows_on_buttons_hover_color+' !important;\
+	}\
+	scrollbar[orient="vertical"] > scrollbarbutton[type="increment"] {\
+	  border-left: '+(custom_scrollbar_size_value/2)+'px solid transparent !important;\
+	  border-right: '+(custom_scrollbar_size_value/2)+'px solid transparent !important;\
+	  border-top: '+(custom_scrollbar_size_value/2)+'px solid '+cs_arrows_on_buttons_color+' !important;\
+	}\
+	scrollbar[orient="vertical"] > scrollbarbutton[type="increment"]:hover {\
+	  border-top: '+(custom_scrollbar_size_value/2)+'px solid '+cs_arrows_on_buttons_hover_color+' !important;\
+	}\
+	scrollbar[orient="horizontal"] > scrollbarbutton[type="decrement"] {\
+	  border-top: '+(custom_scrollbar_size_value/2)+'px solid transparent !important;\
+	  border-bottom: '+(custom_scrollbar_size_value/2)+'px solid transparent !important;\
+	  border-right: '+(custom_scrollbar_size_value/2)+'px solid '+cs_arrows_on_buttons_color+' !important;\
+	}\
+	scrollbar[orient="horizontal"] > scrollbarbutton[type="decrement"]:hover {\
+	  border-right: '+(custom_scrollbar_size_value/2)+'px solid '+cs_arrows_on_buttons_hover_color+' !important;\
+	}\
+	scrollbar[orient="horizontal"] > scrollbarbutton[type="increment"] {\
+	  border-top: '+(custom_scrollbar_size_value/2)+'px solid transparent !important;\
+	  border-bottom: '+(custom_scrollbar_size_value/2)+'px solid transparent !important;\
+	  border-left: '+(custom_scrollbar_size_value/2)+'px solid '+cs_arrows_on_buttons_color+' !important;\
+	}\
+	scrollbar[orient="horizontal"] > scrollbarbutton[type="increment"]:hover {\
+	  border-left: '+(custom_scrollbar_size_value/2)+'px solid '+cs_arrows_on_buttons_hover_color+' !important;\
 	}\
 	\
   '), null, null);
@@ -149,7 +338,7 @@ var scrollbar_buttons = {
   }
 };
 
-var scrollbar_width = {
+var scrollbar_size = {
 
   init: function() {
 
@@ -159,13 +348,13 @@ var scrollbar_width = {
 	\
 	scrollbar[orient="vertical"] scrollbarbutton {\
 	  min-width: 0 !important;\
-	  width: '+custom_scrollbar_width_value+'px !important;\
-	  max-width: '+custom_scrollbar_width_value+'px !important;\
+	  width: '+custom_scrollbar_size_value+'px !important;\
+	  max-width: '+custom_scrollbar_size_value+'px !important;\
 	}\
 	scrollbar[orient="horizontal"] scrollbarbutton {\
 	  min-height: 0 !important;\
-	  height: '+custom_scrollbar_width_value+'px !important;\
-	  max-height: '+custom_scrollbar_width_value+'px !important;\
+	  height: '+custom_scrollbar_size_value+'px !important;\
+	  max-height: '+custom_scrollbar_size_value+'px !important;\
 	}\
 	\
   '), null, null);
@@ -187,17 +376,19 @@ var floating_scrollbars = {
 	  position: relative !important;\
 	  z-index: 1000000000 !important;\
 	}\
+	scrollbar[orient="vertical"],\
+	scrollbar[orient="horizontal"],\
 	scrollbar, scrollcorner {\
 	  background-color: transparent !important; \
 	  background-image: unset !important; \
 	}\
 	scrollbar[orient="vertical"] {\
-	  -moz-margin-start: -'+custom_scrollbar_width_value+'px !important;\
-	  width: '+custom_scrollbar_width_value+'px !important;\
+	  -moz-margin-start: -'+custom_scrollbar_size_value+'px !important;\
+	  width: '+custom_scrollbar_size_value+'px !important;\
 	}\
 	scrollbar[orient="horizontal"] {\
-	  margin-top: -'+custom_scrollbar_width_value+'px !important;\
-	  height: '+custom_scrollbar_width_value+'px !important;\
+	  margin-top: -'+custom_scrollbar_size_value+'px !important;\
+	  height: '+custom_scrollbar_size_value+'px !important;\
 	}\
 	\
   '), null, null);
@@ -248,8 +439,10 @@ var remove_scrollbars = {
 
 // enables settings as set
 if(enable_custom_scrollbars==true) custom_scrollbars.init();
+if(cs_buttons_as_arrows==true && hide_scrollbars==false) cs_scrollbars_scrollbar_button_arrows.init();
+if(cs_arrows_on_buttons==true && cs_buttons_as_arrows==false && hide_scrollbars==false) cs_scrollbars_arrows_on_buttons.init();
 if(hide_scrollbar_buttons==true) scrollbar_buttons.init();
-if(custom_scrollbar_width==true) scrollbar_width.init();
+if(custom_scrollbar_size==true) scrollbar_size.init();
 if(enable_floating_scrollbars==true) floating_scrollbars.init();
 if(custom_scrollbar_opacity==true) scrollbar_opacity.init();
 if(hide_scrollbars==true) remove_scrollbars.init();
