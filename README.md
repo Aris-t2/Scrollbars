@@ -1,5 +1,6 @@
 <h1>Custom Scrollbars for Firefox 57+</h1>
-<b><a href=https://github.com/Aris-t2/Scrollbars/releases>[ Download ]</a></b></br>
+<b><a href=https://github.com/Aris-t2/Scrollbars/releases>[ Download ]</a></b></br></br>
+<b>Both available methods use the <u>same</u> JavaScript code to customize scrollbars.</b> They only differ in the way Firefox loads custom JavaScipt files.</br>
 <h2>Want to support this project?</h2>
 <b><a href=https://www.paypal.me/tkpay>[ Paypal Me ]</a></b></br>
 </br>
