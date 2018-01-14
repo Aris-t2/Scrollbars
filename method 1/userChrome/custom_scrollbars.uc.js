@@ -63,7 +63,7 @@ var cs_background_image_vertical = "linear-gradient(to right,transparent,rgba(25
 var cs_background_image_horizontal = "linear-gradient(to bottom,transparent,rgba(255,255,255,0.5),transparent)"; /* default = "unset" */
 // - corner
 var cs_corner_background_color = "#CCCCCC"; /* default = "#CCCCCC" */
-var cs_corner_background_image = "linear-gradient(45deg,transparent 30%,rgba(255,255,240,0.5) 50%,transparent 70%),linear-gradient(-45deg,transparent 30%,rgba(255,255,240,0.5) 50%,transparent 70%)"; /* default = "unset" */
+var cs_corner_background_image = "linear-gradient(45deg,transparent 30%,rgba(255,255,255,0.5) 50%,transparent 70%),linear-gradient(-45deg,transparent 30%,rgba(255,255,255,0.5) 50%,transparent 70%)"; /* default = "unset" */
 // - thumb/slider
 var cs_thumb_color = "#33CCFF"; /* default = "#33CCFF" */
 var cs_thumb_image_vertical = "linear-gradient(to right,transparent,rgba(255,255,255,0.5),transparent)"; /* default = "unset" */
