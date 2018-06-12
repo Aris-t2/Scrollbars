@@ -1,4 +1,4 @@
-<h1>Custom Scrollbars for Firefox 57+</h1>
+<h1>Custom Scrollbars for Firefox Quantum (57+)</h1>
 <b><a href=https://github.com/Aris-t2/Scrollbars/releases>[ Download ]</a></b></br></br>
 <b>Both available methods use the <u>same</u> JavaScript code to customize scrollbars.</b> They only differ in the way Firefox loads custom JavaScipt files.</br>
 <h2>Want to support this project?</h2>
@@ -12,12 +12,14 @@ From this projects <code>\method 1\</code> folder copy <code>userChrome</code> f
 </br>
 <h2>Method 2 - files for Firefox installation folder and Firefox profile folder</h2>
 M2 is based on this project by ardiman: https://github.com/ardiman/userChrome.js </br>
+M2 is also based on the modified files by Endor8: https://github.com/Endor8/userChrome.js/ </br>
 </br>
 From this projects <code>\method 2\profile\</code> folder copy <code>userChrome</code> folder and <code>userChrome.js</code> file to <code>\ PROFILENAME \chrome\ </code>.</br>
 </br>
 From this projects <code>\method 2\firefox\</code> folder copy <code>defaults</code> folder and <code>config.js</code> file to Firefox main directory (where the Firefox executable is).
 </br>
 <h2>Script/startup cache must be deleted after every change!</h2>
+M2 method (now) uses <code>userChrome.ignoreCache = true;</code> inside <code>userChrome.js</code> file and clears the script/startup cache automatically.</br>
 Where to find <code>startupCache</code> folder?</br>
 <code>about:profiles > Local Directory > Open Folder</code>, close Firefox and delete all files in <code>startupCache</code> folder.</br>
 </br>
