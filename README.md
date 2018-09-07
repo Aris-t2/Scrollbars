@@ -14,9 +14,11 @@ From this projects <code>\method 1\</code> folder copy <code>userChrome</code> f
 M2 is based on this project by ardiman: https://github.com/ardiman/userChrome.js </br>
 M2 is also based on the modified files by Endor8: https://github.com/Endor8/userChrome.js/ </br>
 </br>
-From this projects <code>\method 2\profile\</code> folder copy <code>userChrome</code> folder and <code>userChrome.js</code> file to <code>\ PROFILENAME \chrome\ </code>.</br>
+From this projects <code>\method 2\profile\</code> folder copy <code>userChrome</code> folder and <code>userChrome.js</code> file to <code>\ PROFILENAME \chrome\</code> folder.</br>
 </br>
-From this projects <code>\method 2\firefox\</code> folder copy <code>defaults</code> folder and <code>config.js</code> file to Firefox main directory (where the Firefox executable is).
+From this projects <code>\method 2\firefox\</code> folder copy <code>defaults</code> folder and <code>config.js</code> file to Firefox main directory (where the Firefox executable is). </br>
+</br>
+With beta and release versions of Firefox 62+ an additional preferences <code>pref("general.config.sandbox_enabled", false);</code> has to be set inside <code>config-prefs.js</code> file. This is considered less secure by Mozilla and is only a temporary workaround, but at the moment it is the only way to run custom scripts using "methode 2". </br>
 </br>
 <h2>Script/startup cache must be deleted after every change!</h2>
 M2 method (now) uses <code>userChrome.ignoreCache = true;</code> inside <code>userChrome.js</code> file and clears the script/startup cache automatically.</br>
